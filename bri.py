@@ -26,6 +26,7 @@ except:
 username = raw_input("ID: ")
 password = getpass("PASSWORD: ")
 comment = raw_input("COMMENT: ")
+comment = comment.decode(sys_encode)
 degree = raw_input("degree(1-8,1 is the best): ")
 degree = degree.decode(sys_encode).encode('GBK')
 if int(degree)  not in range(1,8):
@@ -41,7 +42,6 @@ degree_const = {
         6: '0.7',
         7: '0.6',
         8: '0.4'}
-comment = comment.decode(sys_encode)
 login_data = {
         'zjh': username.decode(sys_encode),
         'mm': password.decode(sys_encode),
@@ -102,8 +102,8 @@ for i in data:
             'Referer': 'http://10.3.240.70'
             }
     vote = requests.post('http://10.3.240.70/jxpgXsAction.do?oper=wjpg', data=post_data, cookies=login.cookies, headers=headers)
-    out =  vote.content.decode('GBK')
-    if str(out.encode('UTF-8')).find('成功'):
+    out =  vote.content
+    if str(out).find('成功') >= 0:
         print "---- success on " + i['bprm']
     else:
         print "---- fail on " + i['bprm']
