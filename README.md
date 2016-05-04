@@ -14,3 +14,6 @@ BUPT 教务系统教师评测快速完成
 
 TODO： 实现远程调用，省去安装库，甚至安装python的麻烦。但是远程调用对于用户密码不安全
 P.S. http://nullne.com/autoEvaluate.html 附有心得，也是第一次练手，望轻拍
+
+
+<a href="https://cla-assistant.io/nullne/buptjw_auto_evaluate"><img src="https://cla-assistant.io/readme/badge/nullne/buptjw_auto_evaluate" alt="CLA assistant" /></a>
